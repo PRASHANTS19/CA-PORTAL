@@ -1,0 +1,20 @@
+package CA_Portal.CA_Portal.expenses;
+
+public enum ExpenseCategory {
+    OFFICE_SUPPLIES,
+    RENT,
+    UTILITIES,
+    SALARIES,
+    TRAVEL,
+    MARKETING,
+    PROFESSIONAL_FEES,
+    INSURANCE,
+    SOFTWARE_SUBSCRIPTIONS,
+    EQUIPMENT,
+    MAINTENANCE,
+    TAXES,
+    MEALS_ENTERTAINMENT,
+    TELECOMMUNICATIONS,
+    BANK_CHARGES,
+    OTHER
+}

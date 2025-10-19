@@ -50,8 +50,8 @@ public class    OrganizationEntity {
     @Column(name = "updated_at", updatable = false)
     private String updatedAt;
 
-    @OneToMany(mappedBy = "organizations", cascade = CascadeType.ALL)
-    @Builder.Default
-    private List<UserEntity> users = new ArrayList<>();
+//    @OneToMany(mappedBy = "organizations", cascade = CascadeType.ALL)
+//    @Builder.Default
+//    private List<UserEntity> users = new ArrayList<>();
 
 }

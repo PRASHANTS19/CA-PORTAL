@@ -1,6 +1,7 @@
 package CA_Portal.CA_Portal.user;
 
 
+import CA_Portal.CA_Portal.dashboardDailySummary.DashboardDailySummaryEntity;
 import CA_Portal.CA_Portal.expenses.ExpensesEntity;
 import CA_Portal.CA_Portal.organization.OrganizationEntity;
 import CA_Portal.CA_Portal.sales.SalesEntity;

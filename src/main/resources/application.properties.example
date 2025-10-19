@@ -1,0 +1,23 @@
+spring.application.name=CA-Portal
+server.port=8081
+
+# Database connection
+# spring.datasource.url=jdbc-secretsmanager:postgresql://database-1.cluster-ctsyu0uqikpm.ap-south-1.rds.amazonaws.com:5432/postgres
+# spring.datasource.username=arn:aws:secretsmanager:ap-south-1:811380148343:secret:rds!cluster-0d60d038-d95b-4ca7-83d3-0fe09630e251-uewQS6
+# spring.datasource.driver-class-name=com.amazonaws.secretsmanager.sql.AWSSecretsManagerPostgreSQLDriver
+
+#spring.datasource.url=jdbc:postgresql://database-1.cluster-ctsyu0uqikpm.ap-south-1.rds.amazonaws.com:5432/postgres
+#spring.datasource.username=sahuprashant
+#spring.datasource.password=Prashant
+#spring.jpa.hibernate.ddl-auto=validate
+
+# JPA/Hibernate settings
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+# Local PostgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/CA-PORTAL
+spring.datasource.username=postgres
+spring.datasource.password=
+

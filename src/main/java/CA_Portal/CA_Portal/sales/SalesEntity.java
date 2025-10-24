@@ -19,8 +19,8 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString(exclude = {"customer", "lineItems"})
-@EqualsAndHashCode(exclude = {"customer", "lineItems"})
+@ToString(exclude = {"user", "lineItems"})
+@EqualsAndHashCode(exclude = {"user", "lineItems"})
 
 public class SalesEntity {
 
@@ -30,7 +30,7 @@ public class SalesEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false )
-    private UserEntity customer;
+    private UserEntity user;
 
 
     @Column(name = "invoice_number", nullable = false, length = 100)

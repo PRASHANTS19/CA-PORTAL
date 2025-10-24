@@ -7,10 +7,9 @@ import java.util.*;
 
 @Repository
 public interface SalesRepository extends JpaRepository<SalesEntity, Long> {
-    List<SalesEntity>findByUserId(Long userId);
+    List<SalesEntity>findByUser_Id(Long userId);
     List<SalesEntity>findByStatus(SalesStatus status);
     Optional<SalesEntity>findByInvoiceNumber(String invoiceNumber);
 
-    @Query("SELECT s FROM SalesEntity s WHERE s.userId = ?1 AND s.status = ?2")
     List<SalesEntity> findByUserIdAndStatus(Long userId, SalesStatus status);
 }

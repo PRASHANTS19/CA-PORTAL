@@ -1,7 +1,6 @@
 package CA_Portal.CA_Portal.user;
 
 
-import CA_Portal.CA_Portal.dashboardDailySummary.DashboardDailySummaryEntity;
 import CA_Portal.CA_Portal.expenses.ExpensesEntity;
 import CA_Portal.CA_Portal.organization.OrganizationEntity;
 import CA_Portal.CA_Portal.sales.SalesEntity;
@@ -12,6 +11,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import jakarta.validation.constraints.*;
+
 
 @Entity
 @Table(name = "users")
@@ -35,12 +36,18 @@ public class UserEntity {
     @Column(name = "column_type", nullable = false, length = 50)
     private UserType userType;
 
+    // Add these to relevant fields:
+    @NotBlank(message = "Email is required")
+    @Email(message = "Email should be valid")
     @Column(nullable = false, unique = true, length = 255)
     private String email;
 
+    @NotBlank(message = "Name is required")
+    @Size(min = 2, max = 255, message = "Name must be between 2 and 255 characters")
     @Column(nullable = false, length = 255)
     private String name;
 
+    @Pattern(regexp = "^[0-9]{10,15}$", message = "Phone number should be valid")
     @Column(length = 50)
     private String phone;
 
@@ -73,7 +80,7 @@ public class UserEntity {
     @Column(length = 50)
     private String gstin;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @Builder.Default
     private List<SalesEntity>sale = new ArrayList<>();
 
@@ -81,16 +88,12 @@ public class UserEntity {
     @Builder.Default
     private List<ExpensesEntity> expenses = new ArrayList<>();
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
-    @Builder.Default
-    private List<DashboardDailySummaryEntity> dailySummaries = new ArrayList<>();
-
     public boolean isInternalUser() {
         return userType == UserType.INTERNAL_USER;
     }
 
     public boolean isCustomer() {
-        return userType == UserType.CUSTOMER;
+        return userType == UserType.USER;
     }
 
     public String getFullName() {

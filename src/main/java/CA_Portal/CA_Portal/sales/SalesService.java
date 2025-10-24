@@ -21,7 +21,7 @@ public class SalesService {
     }
 
     public List<SalesEntity>getSalesByUserID(Long UserID){
-        return salesRepository.findByUserId(UserID);
+        return salesRepository.findByUser_Id(UserID);
     }
     public List<SalesEntity>getSalesByStatus(SalesStatus status){
         return salesRepository.findByStatus(status);
